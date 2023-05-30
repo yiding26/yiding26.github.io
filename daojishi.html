@@ -3,15 +3,25 @@
     <head>
         <title>倒计时</title>
         <meta charset="UTF-8">
+        <style>
+            #title {
+                text-align: center;
+            }
+            #author {
+                text-align: right;
+            }
+        </style>
     </head>
     <body>
+        <h1 id="title">倒计时</h1>
         <div id="liuyi"></div>
         <div id="qimokaoshi"></div>
+        <h5 id="author">Made By yiding26 (张逸鼎)</h5>
     <script>
         function startCountdown(text, countDownDate, countdownElementId) {
             var countdownElement = document.getElementById(countdownElementId);
             countdownElement.style.fontFamily = "Arial, sans-serif";
-            countdownElement.style.textAlign = "center";
+            countdownElement.style.textAlign = "justify";
             countdownElement.style.fontSize = "24px";
             countdownElement.style.marginTop = "50px";
             var titleElement = document.getElementById("title");
