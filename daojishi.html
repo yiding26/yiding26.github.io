@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>倒计时</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="liuyi"></div>
+        <div id="qimokaoshi"></div>
+    <script>
+        function startCountdown(text, countDownDate, countdownElementId) {
+            var countdownElement = document.getElementById(countdownElementId);
+            countdownElement.style.fontFamily = "Arial, sans-serif";
+            countdownElement.style.textAlign = "center";
+            countdownElement.style.fontSize = "24px";
+            countdownElement.style.marginTop = "50px";
+            var titleElement = document.getElementById("title");
+
+            var countdown = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = countDownDate - now;
+                // 计算剩余时间
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // 更新页面上的倒计时元素
+                countdownElement.innerHTML = text + days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";
+
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    countdownElement.innerHTML = "已经到" + text;
+                } else {
+                     if (days <5)  {
+		countdownElement.style.color = "red";
+	     }
+	     countdownElement.innerHTML = "距离" + text +"仅剩"+ days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";
+	}
+            }, 1000);
+        }
+
+        // 调用倒计时函数，六一
+        startCountdown("六一儿童节", new Date("June 1, 2023 7:00:00").getTime(), "liuyi");
+
+        // 调用倒计时函数，期末考试
+        startCountdown("期末考试", new Date("June 21, 2023 9:00:00").getTime(), "qimokaoshi");
+    </script>
+    </body>
+</html>
