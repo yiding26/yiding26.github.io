@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>倒计时</title>
-        <meta charset="UTF-8">
-        <style>
-            #title {
-                text-align: center;
-            }
-            #author {
-                text-align: right;
-            }
-        </style>
-    </head>
-    <body>
-        <h1 id="title">倒计时</h1>
-        <div id="liuyi"></div>
-        <div id="qimokaoshi"></div>
-        <h6 id="author">Made by yiding26 (张逸鼎)</h6>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yiding - 倒计时</title>
+    <script src="year.js"></script>
+</head>
+<body>
+    <link rel="stylesheet" href="styles.css">
+    <div class="container">
+        <h1>倒计时</h1>
+        <section>
+            <div id="liuyi"></div>
+            <div id="dfkxkaoshi"></div>
+            <div id="qimokaoshi"></div>
+        </section>
+        
+    </div>
+    <footer>
+        <p id="copyright"></p>
+    </footer>
     <script>
         function startCountdown(text, countDownDate, countdownElementId) {
             var countdownElement = document.getElementById(countdownElementId);
@@ -55,11 +57,12 @@
             }, 1000);
         }
 
-        // 调用倒计时函数，六一
+        //六一
         startCountdown("六一儿童节", new Date("June 1, 2023 7:00:00").getTime(), "liuyi");
-
-        // 调用倒计时函数，期末考试
+        // 道德与法治和科学期末考试
+        startCountdown("道德与法治和科学期末考试", new Date("June 7, 2023 7:00:00").getTime(), "dfkxkaoshi");
+        //期末考试
         startCountdown("期末考试", new Date("June 21, 2023 9:00:00").getTime(), "qimokaoshi");
     </script>
-    </body>
+</body>
 </html>
