@@ -10,9 +10,10 @@
     <div class="container">
         <h1>倒计时</h1>
         <section>
-            <div id="dfkxkaoshi"></div>
 	    <div id="xxkaoshi"></div>
-            <div id="qimokaoshi"></div>
+            <div id="chinese"></div>
+	    <div id="math"></div>
+	    <div id="english"></div>
         </section>
         
     </div>
@@ -49,19 +50,21 @@
 			if (minutes < 1){
                         	countdownElement.innerHTML = "距离" + text +"仅剩"+ seconds + "秒";
                     	}
-                    }
+		    }
 	        } else {
                     countdownElement.innerHTML = "距离" + text +"仅剩"+ days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";    
 	        }
             }, 1000);
         }
 	
-        // 道德与法治和科学期末考试
-        startCountdown("道德与法治和科学期末考试", new Date("June 7, 2023 13:50:00").getTime(), "dfkxkaoshi");
 	// 信息期末考试
-        startCountdown("信息期末考试", new Date("June 15, 2023 7:00:00").getTime(), "xxkaoshi");
-        // 期末考试
-        startCountdown("语数英期末考试", new Date("June 21, 2023 9:00:00").getTime(), "qimokaoshi");
+        startCountdown("信息期末考试", new Date("June 15, 2023 13:50:00").getTime(), "xxkaoshi");
+        // 语文期末考试
+        startCountdown("语文期末考试", new Date("June 20, 2023 10:00:00").getTime(), "chinese");
+	// 数学期末考试
+        startCountdown("数学期末考试", new Date("June 20, 2023 13:00:00").getTime(), "math");
+	// 英语期末考试
+        startCountdown("英语期末考试", new Date("June 21, 2023 10:00:00").getTime(), "english");
     </script>
 </body>
 </html>
